@@ -10,16 +10,28 @@ namespace ConsoleApplication2
     {
         static void Main(string[] args)
         {
-            fightEmulation(5); 
+            FightEmulation(5); 
         }
 
-        public static void fightEmulation(int groupSize)
+        /*
+         * Зачем тебе отдельная бибилитека,если эмуляцию игры ты производишь здесь!?
+         */
+
+
+        /// <summary>
+        /// Метод который позволяет произвести эмуляцию боя
+        /// </summary>
+        /// <param name="groupSize"></param>
+        public static void FightEmulation(int groupSize)
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("***GREATE TANK BUTTLE***");
+
             int[] resultArr = { 0, 0 };
+
             Tank[] firstTeam = new Tank[groupSize];
             Tank[] secondTeam = new Tank[groupSize];
+
             for (int i = 0; i < groupSize; i++)
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
@@ -50,6 +62,7 @@ namespace ConsoleApplication2
                 }
                 Console.WriteLine();
             }
+
             if (resultArr[0] > resultArr[1])
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
@@ -57,6 +70,7 @@ namespace ConsoleApplication2
                 Console.ResetColor();
                 return;
             }
+
             if(resultArr[1]>resultArr[0])
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
@@ -64,6 +78,7 @@ namespace ConsoleApplication2
                 Console.ResetColor();
                 return;
             }
+
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("IT'S A DRAW");
             Console.ResetColor();
